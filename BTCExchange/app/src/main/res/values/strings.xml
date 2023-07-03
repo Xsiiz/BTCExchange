@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BTC Exchange</string>
+    <string name="selected_item">Selected item:</string>
+
+    <string-array name="currency">
+        <item>USD</item>
+        <item>GBP</item>
+        <item>EUR</item>
+    </string-array>
+</resources>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".view.MainActivity">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imv_bitcoin_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/imv_usd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:src="@drawable/ic_bitcoin"
+        android:layout_marginBottom="100dp"/>
+
+    <TextView
+        android:id="@+id/home_app_name"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:textSize="24sp"
+        android:text="BTC EXCHANGE"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@+id/tv_usd_current_price"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imv_usd"
+        app:layout_constraintTop_toBottomOf="@+id/imv_bitcoin_logo" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imv_usd"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/imv_gbp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_usd_current_price"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imv_bitcoin_logo"
+        android:src="@drawable/ic_usd" />
+
+    <TextView
+        android:id="@+id/tv_usd_current_price"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imv_usd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imv_usd"
+        app:layout_constraintTop_toTopOf="@+id/imv_usd"
+        tools:text="10000"
+        android:textColor="@color/white"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:textSize="20sp"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imv_gbp"
+        android:layout_margin="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/imv_eur"
+        app:layout_constraintEnd_toEndOf="@+id/imv_usd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/imv_usd"
+        app:layout_constraintTop_toBottomOf="@+id/imv_usd"
+        android:src="@drawable/ic_gpd" />
+
+    <TextView
+        android:id="@+id/tv_gbp_current_price"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/imv_gbp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_usd_current_price"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imv_gbp"
+        app:layout_constraintTop_toTopOf="@+id/imv_gbp"
+        tools:text="10000" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imv_eur"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/currency_spinner"
+        app:layout_constraintEnd_toEndOf="@+id/imv_usd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/imv_usd"
+        app:layout_constraintTop_toBottomOf="@+id/imv_gbp"
+        android:src="@drawable/ic_eur" />
+
+    <TextView
+        android:id="@+id/tv_eur_current_price"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/imv_eur"
+        app:layout_constraintEnd_toEndOf="@+id/tv_gbp_current_price"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imv_eur"
+        app:layout_constraintTop_toTopOf="@+id/imv_eur"
+        tools:text="10000" />
+
+    <Spinner
+        android:id="@+id/currency_spinner"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:background="@color/white"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/imv_bitcoin_mini"
+        app:layout_constraintEnd_toStartOf="@+id/edt_priceInput"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imv_eur"
+        android:layout_marginTop="100dp"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edt_priceInput"
+        android:hint="Price"
+        android:inputType="numberDecimal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:lines="1"
+        android:background="@drawable/bg_input"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/currency_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/currency_spinner"
+        app:layout_constraintTop_toTopOf="@+id/currency_spinner" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imv_bitcoin_mini"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_bitcoin"
+        app:layout_constraintBottom_toTopOf="@+id/bt_exchange_rate_history"
+        app:layout_constraintEnd_toStartOf="@+id/total_bitcoin_price"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/edt_priceInput"
+        app:layout_constraintTop_toBottomOf="@+id/currency_spinner" />
+
+    <TextView
+        android:id="@+id/total_bitcoin_price"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:lines="1"
+        android:maxLength="15"
+        android:text="Bitcoin Price"
+        app:layout_constraintBottom_toBottomOf="@+id/imv_bitcoin_mini"
+        app:layout_constraintEnd_toEndOf="@+id/edt_priceInput"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imv_bitcoin_mini"
+        app:layout_constraintTop_toTopOf="@+id/imv_bitcoin_mini"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_enter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:text="Enter"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/total_bitcoin_price"
+        app:layout_constraintEnd_toEndOf="@+id/currency_spinner"
+        app:layout_constraintStart_toStartOf="@+id/currency_spinner"
+        app:layout_constraintTop_toTopOf="@+id/total_bitcoin_price" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_exchange_rate_history"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:textSize="12sp"
+        android:text="Exchange Rate History"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imv_bitcoin_mini" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
